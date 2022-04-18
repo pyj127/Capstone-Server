@@ -1,15 +1,18 @@
 package com.capstone.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
-public class OrderDto {
-    private Integer uId;
-    private Integer pId;
+public class OrdersDto {
+    @JsonProperty("u_id")
+    private int uId;
+    @JsonProperty("p_id")
+    private int pId;
     private String menu;
-    private Integer price;
+    private int price;
     private String request;
-    private Integer fee;
+    private int fee;
     private boolean remit;
 
     @Override

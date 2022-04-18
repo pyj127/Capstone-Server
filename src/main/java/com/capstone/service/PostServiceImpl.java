@@ -1,6 +1,6 @@
 package com.capstone.service;
 
-import com.capstone.dto.OrderDto;
+import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
 import com.capstone.mapper.PostMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class PostServiceImpl {
         postMapper.createPost(postDto);
     }
 
-    public void createOrder(OrderDto orderDto) { postMapper.createOrder(orderDto);}
+    public void createOrders(OrdersDto ordersDto) { postMapper.createOrders(ordersDto);}
 
     ;
 }
