@@ -1,8 +1,7 @@
 package com.capstone.controller;
 
-import com.capstone.dto.OrderDto;
+import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
-import com.capstone.mapper.PostMapper;
 import com.capstone.service.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,9 +29,9 @@ public class PostController {
         return postDto;
     }
 
-    @PostMapping("/order")
-    public OrderDto createOrder(@RequestBody OrderDto orderDto){
-        postService.createOrder(orderDto);
-        return orderDto;
+    @RequestMapping(value = "/order",method = RequestMethod.PUT)
+    public OrdersDto createOrders(@RequestBody OrdersDto ordersDto){
+        postService.createOrders(ordersDto);
+        return ordersDto;
     }
 }

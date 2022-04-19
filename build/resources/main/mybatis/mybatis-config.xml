@@ -6,4 +6,5 @@
         <mapper resource="UserMapper.xml"/>
         <mapper resource="PostMapper.xml"/>
     </mappers>
+
 </configuration>

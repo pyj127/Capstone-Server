@@ -4,10 +4,10 @@ import lombok.Getter;
 
 @Getter
 public class RestaurantDto {
-    private Integer rId;
+    private int rId;
     private String rName;
     private String category;
-    private Integer minPrice;
+    private int minPrice;
     private String orderFee;
 
     @Override

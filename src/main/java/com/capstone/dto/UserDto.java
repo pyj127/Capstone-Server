@@ -4,7 +4,7 @@ import lombok.Getter;
 
 @Getter
 public class UserDto {
-    private Long uId;
+    private int uId;
     private String pw;
     private String name;
     private String bank;

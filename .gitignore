@@ -1,4 +1,2 @@
-Server/src/main/resources/application.properties
-*.properties
-Client/node_modules/
+src/main/resources/application.properties
 .DS_Store

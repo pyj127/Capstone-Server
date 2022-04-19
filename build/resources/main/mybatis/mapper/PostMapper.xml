@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.capstone.mapper.PostMapper">
-    <sql id="orderColumns">
+    <sql id="ordersColumns">
         u_id
         , p_id
 		, menu
@@ -26,9 +26,9 @@
         INSERT INTO post (title, order_time, post_time, shooting_user, p_location, u_id, r_id) VALUES (#{title}, #{orderTime}, #{postTime}, #{shootingUser}, #{pLocation}, #{uId}, #{rId})
     </insert>
 
-    <insert id="createOrder" parameterType="OrderDto">
-        INSERT INTO order (
-        <include refid="orderColumns" />
+    <insert id="createOrders" parameterType="OrdersDto">
+        INSERT INTO orders (
+        <include refid="ordersColumns" />
         ) VALUES (
          #{uId}
         , #{pId}
