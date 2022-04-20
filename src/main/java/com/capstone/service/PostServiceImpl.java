@@ -1,5 +1,6 @@
 package com.capstone.service;
 
+import com.capstone.dto.MainPostDto;
 import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
 import com.capstone.mapper.PostMapper;
@@ -30,6 +31,8 @@ public class PostServiceImpl {
     }
 
     public void createOrders(OrdersDto ordersDto) { postMapper.createOrders(ordersDto);}
+
+    public List<MainPostDto> searchPost(String keyword){ return postMapper.searchPost(keyword);}
 
     ;
 }

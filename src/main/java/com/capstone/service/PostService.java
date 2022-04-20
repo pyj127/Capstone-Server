@@ -1,5 +1,6 @@
 package com.capstone.service;
 
+import com.capstone.dto.MainPostDto;
 import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
 import java.util.List;
@@ -9,4 +10,5 @@ public interface PostService {
     List<PostDto> getPostAll();
     void createPost(PostDto postDto);
     void createOrders(OrdersDto ordersDto);
+    List<MainPostDto> searchPost(String keyword);
 }

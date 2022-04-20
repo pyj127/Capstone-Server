@@ -39,4 +39,8 @@
         , #{remit}
         )
     </insert>
+
+    <select id="searchPost" parameterType="String" resultType="MainPostDto">
+        select * from (select title, r_name, order_time, category, min_price from post left join restaurant on post.r_id=restaurant.r_id)A where title like CONCAT('%',#{keyword},'%') or r_name like CONCAT('%',#{keyword},'%');
+    </select>
 </mapper>
