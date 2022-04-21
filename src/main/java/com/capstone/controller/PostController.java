@@ -1,5 +1,6 @@
 package com.capstone.controller;
 
+import com.capstone.dto.MainPostDto;
 import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
 import com.capstone.service.PostServiceImpl;
@@ -33,5 +34,10 @@ public class PostController {
     public OrdersDto createOrders(@RequestBody OrdersDto ordersDto){
         postService.createOrders(ordersDto);
         return ordersDto;
+    }
+
+    @RequestMapping(value = "/main/search",method = RequestMethod.GET)
+    public List<MainPostDto> searchPost(@RequestParam String keyword){
+        return postService.searchPost(keyword);
     }
 }

@@ -1,5 +1,6 @@
 package com.capstone.mapper;
 
+import com.capstone.dto.MainPostDto;
 import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
 import org.apache.ibatis.annotations.Mapper;
@@ -11,4 +12,5 @@ public interface PostMapper {
     public List<PostDto> getPostAll();
     public void createPost(PostDto postDto);
     public void createOrders(OrdersDto ordersDto);
+    public  List<MainPostDto> searchPost(String keyword);
 }
