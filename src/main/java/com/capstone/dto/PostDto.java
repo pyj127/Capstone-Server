@@ -1,7 +1,7 @@
 package com.capstone.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import lombok.Getter;
 
@@ -11,7 +11,7 @@ public class PostDto {
     @JsonProperty("title")
     private String title;
     @JsonProperty("order_time")
-    private LocalDateTime orderTime;
+    private LocalTime orderTime;
     @JsonProperty("post_time")
     private LocalDateTime postTime;
     @JsonProperty("shooting_user")
