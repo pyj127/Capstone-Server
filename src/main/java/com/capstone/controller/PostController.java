@@ -17,7 +17,7 @@ public class PostController {
     private PostServiceImpl postService;
 
     @GetMapping("/main")
-    public List<PostDto> getPost(@RequestParam String category){
+    public List<PostDto> getPost(@RequestParam @Nullable String category){
         //category 별 post 분류(category가 있으면 not null이라고 가정)
         if (category!=null)
             return postService.getPostCategory(category);
