@@ -5,6 +5,7 @@ import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
 import com.capstone.service.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class PostController {
     @Autowired
     private PostServiceImpl postService;
 
-    @RequestMapping(value = "/main",method = RequestMethod.GET)
+    @GetMapping("/main")
     public List<PostDto> getPost(@RequestParam String category){
         //category 별 post 분류(category가 있으면 not null이라고 가정)
         if (category!=null)
@@ -24,20 +25,22 @@ public class PostController {
             return postService.getPostAll();
     }
 
-    @PostMapping("/post")
+    @PutMapping("/post")
     public PostDto insertPost(@RequestBody PostDto postDto){
         postService.createPost(postDto);
         return postDto;
     }
 
-    @RequestMapping(value = "/order",method = RequestMethod.PUT)
+    @PutMapping("/order")
     public OrdersDto createOrders(@RequestBody OrdersDto ordersDto){
         postService.createOrders(ordersDto);
         return ordersDto;
     }
 
-    @RequestMapping(value = "/main/search",method = RequestMethod.GET)
+    @GetMapping( "/main/search")
     public List<MainPostDto> searchPost(@RequestParam String keyword){
         return postService.searchPost(keyword);
     }
+
+
 }

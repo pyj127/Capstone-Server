@@ -11,7 +11,7 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
-    @RequestMapping(value = "/signup",method = RequestMethod.PUT)
+    @PutMapping("/signup")
     public void insertUser(@RequestBody UserDto userDto){
         userService.insertUser(userDto);
     }

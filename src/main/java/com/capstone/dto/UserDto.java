@@ -1,9 +1,11 @@
 package com.capstone.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
 @Getter
 public class UserDto {
+    @JsonProperty("u_id")
     private int uId;
     private String pw;
     private String name;
