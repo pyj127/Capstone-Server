@@ -1,5 +1,6 @@
 package com.capstone.mapper;
 
+import com.capstone.dto.DetailPostDto;
 import com.capstone.dto.MainPostDto;
 import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
@@ -13,4 +14,5 @@ public interface PostMapper {
     public void createPost(PostDto postDto);
     public void createOrders(OrdersDto ordersDto);
     public  List<MainPostDto> searchPost(String keyword);
+    public DetailPostDto getDetailPost(int pId);
 }

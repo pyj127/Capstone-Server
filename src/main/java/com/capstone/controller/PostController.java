@@ -1,5 +1,6 @@
 package com.capstone.controller;
 
+import com.capstone.dto.DetailPostDto;
 import com.capstone.dto.MainPostDto;
 import com.capstone.dto.OrdersDto;
 import com.capstone.dto.PostDto;
@@ -42,5 +43,7 @@ public class PostController {
         return postService.searchPost(keyword);
     }
 
+    @GetMapping("/main/detail")
+    public DetailPostDto getDetailPost(@RequestParam int pId){ return postService.getDetailPost(pId);}
 
 }
