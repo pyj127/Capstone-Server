@@ -22,7 +22,7 @@
         select * from post;
     </select>
 
-    <insert id="createPost" parameterType="PostDto">
+    <insert id="createPost">
         INSERT INTO post (title, order_time, post_time, shooting_user, p_location, u_id, r_id) VALUES (#{title}, #{orderTime}, #{postTime}, #{shootingUser}, #{pLocation}, #{uId}, #{rId})
     </insert>
 
@@ -43,8 +43,4 @@
     <select id="searchPost" parameterType="String" resultType="MainPostDto">
         select * from (select title, r_name, order_time, category, min_price from post left join restaurant on post.r_id=restaurant.r_id)A where title like CONCAT('%',#{keyword},'%') or r_name like CONCAT('%',#{keyword},'%');
     </select>
-
-    <select id="getDetailPost" parameterType="int" resultType="DetailPostDto">
-        select * from (select user.u_id, post.p_id, title, name, category, r_name, order_time, min_price from post left join user on post.u_id=user.u_id join restaurant on post.r_id=restaurant.r_id order by p_id)A where p_id=#{pId};    </select>
-
 </mapper>
