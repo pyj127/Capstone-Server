@@ -30,7 +30,7 @@ public class PostController {
         return postDto;
     }
 
-    @RequestMapping(value = "/order",method = RequestMethod.PUT)
+    @RequestMapping(value = "/post",method = RequestMethod.PUT)
     public OrdersDto createOrders(@RequestBody OrdersDto ordersDto){
         postService.createOrders(ordersDto);
         return ordersDto;
