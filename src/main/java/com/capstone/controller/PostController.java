@@ -26,13 +26,13 @@ public class PostController {
             return postService.getPostAll();
     }
 
-    @PutMapping("/post")
+    @PostMapping("/post")
     public PostDto insertPost(@RequestBody PostDto postDto){
         postService.createPost(postDto);
         return postDto;
     }
 
-    @PutMapping("/order")
+    @PutMapping("/post")
     public OrdersDto createOrders(@RequestBody OrdersDto ordersDto){
         postService.createOrders(ordersDto);
         return ordersDto;
