@@ -11,7 +11,6 @@
         , price
 		, request
 		, fee
-		, remit
     </sql>
 
     <select id="getPostCategory" parameterType="String" resultType="PostDto">
@@ -22,7 +21,7 @@
         select * from post;
     </select>
 
-    <insert id="createPost">
+    <insert id="createPost" parameterType="PostDto" useGeneratedKeys="true" keyProperty="pId">
         INSERT INTO post (title, order_time, post_time, shooting_user, p_location, u_id, r_id) VALUES (#{title}, #{orderTime}, #{postTime}, #{shootingUser}, #{pLocation}, #{uId}, #{rId})
     </insert>
 
@@ -36,7 +35,6 @@
         , #{price}
         , #{request}
         , #{fee}
-        , #{remit}
         )
     </insert>
 
