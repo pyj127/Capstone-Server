@@ -21,8 +21,12 @@ public class PostController {
         //category 별 post 분류(category가 있으면 not null이라고 가정)
         if (category!=null)
             return postService.getPostCategory(category);
-        else
-            return postService.getPostAll();
+        else{
+            List<PostDto> postDtoList = postService.getPostAll();
+            for(int i=0; i<postDtoList.size(); i++)
+                System.out.println("postDto = " + postDtoList.get(i));
+            return postDtoList;
+        }
     }
 
     @PostMapping("/post")

@@ -24,6 +24,10 @@ public class PostDto {
     private int uId;
     @JsonProperty("r_id")
     private int rId;
+    @JsonProperty("post_fee")
+    private int postFee;
+    @JsonProperty("total_point")
+    private int totalPoint;
 
 
     @Override
@@ -37,6 +41,8 @@ public class PostDto {
                 ", pLocation='" + pLocation + '\'' +
                 ", uId=" + uId +
                 ", rId=" + rId +
+                ", postFee=" + postFee +
+                ", totalPoint=" + totalPoint +
                 '}';
     }
 }
